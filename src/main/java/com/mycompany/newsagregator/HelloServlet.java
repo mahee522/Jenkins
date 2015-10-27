@@ -30,7 +30,7 @@ public class HelloServlet extends HttpServlet {
         NewsWorker newsWorker = new NewsWorker(config);
         News news = newsWorker.getNews();
         NewsPack pack = new NewsPack(request.getSession(), news);
-        newsWorker.sendNews(response, pack.next());
+        //newsWorker.sendNews(response, pack.next());
         response.getWriter().print("Hello World");
     }
 
