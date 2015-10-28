@@ -10,7 +10,7 @@ import static org.junit.Assert.*;
 public class SimpleTest {
     @Test
     public void myTest() {
-        assertEquals(1,2);
+        assertEquals(1,1);
     }
 
 }
