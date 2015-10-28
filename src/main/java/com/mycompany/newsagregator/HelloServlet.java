@@ -31,7 +31,7 @@ public class HelloServlet extends HttpServlet {
         News news = newsWorker.getNews();
         NewsPack pack = new NewsPack(request.getSession(), news);
         //newsWorker.sendNews(response, pack.next());
-        response.getWriter().print("Hello World");
+        response.getWriter().print("Hello World111111111111111111111111111");
     }
 
     @Override

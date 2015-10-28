@@ -13,7 +13,7 @@
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-
+    
     <dependencies>
         <dependency>
             <groupId>junit</groupId>
@@ -28,10 +28,11 @@
             <scope>provided</scope>
         </dependency>
         <dependency>
-	<groupId>org.json</groupId>
+            <groupId>org.json</groupId>
             <artifactId>json</artifactId>
-	<version>20150729</version>
-</dependency>
+            <version>20150729</version>
+            <scope>provided</scope>
+        </dependency>
 
     </dependencies>
 
@@ -42,8 +43,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.3.2</version>
                 <configuration>
-                    <source>1.6</source>
-                    <target>1.6</target>
+                    <source>1.7</source>
+                    <target>1.7</target>
                     <compilerArguments>
                         <endorseddirs>${endorsed.dir}</endorseddirs>
                     </compilerArguments>
@@ -82,6 +83,19 @@
                     </execution>
                 </executions>
             </plugin>
+            
+            <plugin>
+                <groupId>org.apache.tomcat.maven</groupId>
+                <artifactId>tomcat7-maven-plugin</artifactId>
+                <version>2.0</version>
+                <configuration>
+                    <url>http://localhost:8082/</url>
+                    <server>tomcat</server>
+                    <update>true</update>
+                    <path>/${project.build.finalName}</path>
+                </configuration>
+            </plugin>
+            
         </plugins>
     </build>
 
